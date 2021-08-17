@@ -1,11 +1,11 @@
 rtspDisable: no
 protocols: [tcp]
-rtspAddress: 127.0.0.1:8554
+rtspAddress: 0.0.0.0:8554
 
 rtmpDisable: yes
 
 hlsDisable: no
-hlsAddress: 127.0.0.1:8888
+hlsAddress: 0.0.0.0:8888
 hlsSegmentCount: 4
 hlsSegmentDuration: 2s
 
