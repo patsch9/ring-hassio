@@ -3,9 +3,9 @@
     "version": "1.3.1",
     "description": "Ring Livestream addon",
     "author": "Jeroen ter Heerdt",
-    "main": "livestream.js",
+    "main": "main.mjs",
     "scripts": {
-        "start": "node livestream.js"
+        "start": "node main.mjs"
     },
     "dependencies": {
         "dotenv-extended": "^2.8.0",
