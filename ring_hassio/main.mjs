@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 import { readFile, writeFile } from 'fs/promises';
 import ringClientApi from 'ring-client-api';
 
-const CONFIG_PATH = process.env.CONFIG_PATH || '/etc/ring-ffmpeg.json';
+const CONFIG_PATH = process.env.CONFIG_PATH;
 
 async function updateSavedToken({ newRefreshToken, oldRefreshToken }) {
 	console.log('Refresh Token Updated: ', newRefreshToken);
