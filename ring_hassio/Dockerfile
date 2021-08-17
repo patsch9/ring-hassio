@@ -21,7 +21,7 @@ RUN apk add --no-cache \
     tar -xf rtsp-simple-server_v0.17.2_linux_amd64.tar.gz && \
     rm -f rtsp-simple-server_v0.17.2_linux_amd64.tar.gz && \
     cp -f config/rtsp-simple-server.yml rtsp-simple-server.yml && \
-    npm install ffmpeg && \
+    npm i ffmpeg-for-homebridge && \
     npm install --unsafe-perm && \
     chmod a+x run.sh && \
     chmod a+x main.mjs
