@@ -16,7 +16,7 @@ paths:
 
   ring:
     source: publisher
-    runOnDemand: /ring-hassio/ring_hassio/main.mjs -acodec aac -vcodec copy -f rtsp rtsp://localhost:$RTSP_PORT/$RTSP_PATH
+    runOnDemand: node /ring-hassio/ring_hassio/main.mjs -acodec aac -vcodec copy -f rtsp rtsp://localhost:$RTSP_PORT/$RTSP_PATH
     runOnDemandRestart: yes
     runOnDemandStartTimeout: 20s
     runOnDemandCloseAfter: 5s
