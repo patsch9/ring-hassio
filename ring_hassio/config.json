@@ -3,7 +3,7 @@
     "version": "1.35",
     "slug": "ringlivestream",
     "description": "A Home Assistant add-on to enable live streams of Ring Cameras.",
-    "url": "https://github.com/jeroenterheerdt/ring-hassio",
+    "url": "https://github.com/patsch9/ring-hassio",
     "startup": "application",
     "arch": [
       "aarch64",
@@ -14,10 +14,12 @@
     ],
     "boot":"auto",
     "ports": {
-        "3000/tcp": 3000
+        "8554/tcp": 8554,
+        "8888/tcp": 8888
     },
     "ports_description": {
-        "3000/tcp": "The port you want to expose. You will need to expose this port in your router as well and make sure it is matching the port setting in the options."
+        "8554/tcp": "The port you want to expose. You will need to expose this port in your router as well and make sure it is matching the port setting in the options.",
+        "8888/tcp": "The port you want to expose. You will need to expose this port in your router as well and make sure it is matching the port setting in the options."
     },
     "webui": "http://[HOST]:[PORT:3000]/index.html",
     "options": {

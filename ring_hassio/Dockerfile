@@ -6,7 +6,8 @@ ENV LANG C.UTF-8
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-EXPOSE 3000/tcp
+EXPOSE 8554/tcp
+EXPOSE 8888/tcp
 
 RUN apk add --no-cache \
     nodejs \
@@ -14,8 +15,12 @@ RUN apk add --no-cache \
     ffmpeg \
     git && \
     cd / && \
-    git clone https://github.com/jeroenterheerdt/ring-hassio && \
+    git clone https://github.com/patsch9/ring-hassio && \
     cd ring-hassio/ring_hassio && \
+    wget https://github.com/aler9/rtsp-simple-server/releases/download/v0.17.2/rtsp-simple-server_v0.17.2_linux_amd64.tar.gz && \
+    tar -xf rtsp-simple-server_v0.17.2_linux_amd64.tar.gz && \
+    rm -f rtsp-simple-server_v0.17.2_linux_amd64.tar.gz && \
+    cp -f config/rtsp-simple-server.yml rtsp-simple-server.yml && \
     npm install --unsafe-perm && \
     chmod a+x run.sh
 

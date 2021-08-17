@@ -1,0 +1,22 @@
+rtspDisable: no
+protocols: [tcp]
+rtspAddress: 127.0.0.1:8554
+
+rtmpDisable: yes
+
+hlsDisable: no
+hlsAddress: 127.0.0.1:8888
+hlsSegmentCount: 4
+hlsSegmentDuration: 2s
+
+paths:
+  all:
+    fallback:
+    disablePublisherOverride: no
+
+  ring:
+    source: publisher
+    runOnDemand: /usr/local/lib/ring-ffmpeg/index.mjs -acodec aac -vcodec copy -f rtsp rtsp://localhost:$RTSP_PORT/$RTSP_PATH
+    runOnDemandRestart: yes
+    runOnDemandStartTimeout: 20s
+    runOnDemandCloseAfter: 5s
